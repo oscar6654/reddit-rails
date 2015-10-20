@@ -9,6 +9,8 @@ group :production do
    gem 'rails_12factor'
 end
 gem 'bootstrap-sass'
+gem 'pry-rails'
+gem 'faker'
 group :development do
   gem 'sqlite3'
 end
