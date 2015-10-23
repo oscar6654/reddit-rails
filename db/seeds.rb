@@ -32,7 +32,13 @@
     copy: "FREEDOLLAR",
     price: 25
     )
-
+  20.times do
+    Question.create!(
+      title: Faker::Lorem.sentence,
+      body:  Faker::Lorem.paragraph,
+      resolved: false
+      )
+  end
 
    # Comment.create!(
    #  post: posts,
