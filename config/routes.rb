@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
-  get 'index1' => 'advertisement#index'
+  #get 'index1' => 'advertisement#index'
 
   #get 'advertisement/show'
   #resources :advertisement
   resources :posts
+  resources :advertisement
+
   get 'about' => 'welcome#about'
   root to: 'welcome#index'
 
