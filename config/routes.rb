@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 
+  devise_for :users
   #get 'index1' => 'advertisement#index'
 
   #get 'advertisement/show'
