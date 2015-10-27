@@ -12,6 +12,7 @@ gem 'bootstrap-sass'
 gem 'pry-rails'
 gem 'faker'
 gem 'devise'
+gem 'figaro', '1.0'
 group :development do
   gem 'sqlite3'
 end
