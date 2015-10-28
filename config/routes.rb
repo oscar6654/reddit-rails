@@ -3,7 +3,9 @@ Rails.application.routes.draw do
 
   devise_for :users
   #get 'index1' => 'advertisement#index'
-
+  devise_scope :user do
+   get '/users/sign_out' => 'devise/sessions#destroy'
+  end
   #get 'advertisement/show'
   #resources :advertisement
   resources :question

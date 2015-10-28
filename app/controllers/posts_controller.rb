@@ -1,13 +1,14 @@
 class PostsController < ApplicationController
-  skip_before_action :flash_attack, only: [:index, :new]
+  #skip_before_action :flash_attack, only: [:index, :new]
   def index
-    #@posts = Post.all
+    @posts = Post.all
     @posts = PostPolicy::Scope.new(current_user, Post).resolve
-    authorize @post
+    #authorize @post
   end
 
   def show
     @post = Post.find(params[:id])
+
 
   end
 
