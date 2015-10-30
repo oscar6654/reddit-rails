@@ -1,9 +1,9 @@
 class PostPolicy < ApplicationPolicy
-
   def index?
     true
   end
-class Scope < Scope
+
+  class Scope < Scope
     def resolve
       if !user.blank? && (user.admin? || user.moderator?)
         scope.all

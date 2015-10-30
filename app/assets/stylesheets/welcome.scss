@@ -1,34 +1,15 @@
-// Place all the styles related to the welcome controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-// h1 {
-//   color: red;
-// }
-// p#index-title {
-//    text-align: center;
-//    font-size: 15px;
-//    color: blue;
-// }
-// .posts {
-//    border: solid;
-//    margin: 5px;
-//    padding: 5px;
-//    height: 200px;
-// }
+.social-btn {
+  display: block;
+  width: 125px;
+  height: 25px;
+  background-color: #222222;
+  color: white;
+  text-align: center;
+  padding: 5px;
+  font-size: 10px;
+}
 
-// section {
-//    background: #5998ff;
-//    border-style: solid;
-//    border-width: 5px;
-//    margin: 5px 5px 5px 5px;
-//    padding: 5px 5px 5px 5px;
-// }
-
-.social-btn{
-  background: #3498db;
-  border-radius: 28px;
-  color: #ffffff;
-  padding: 10px 20px 10px 20px;
-  text-decoration: none;
-
+.social-btn:hover {
+  background-color: dodgerblue;
+  color: white;
 }
