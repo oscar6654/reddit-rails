@@ -42,12 +42,12 @@ Rails.application.configure do
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for NGINX
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
-  # config.force_ssl = true
+  config.force _ssl = true
 
   # Use the lowest log level to ensure availability of diagnostic information
   # when problems arise.
   config.log_level = :debug
-
+  config.action_mailer.default_url_options = { host: 'desolate-mountain-7905.herokuapp.com' }
   # Prepend all log lines with the following tags.
   # config.log_tags = [ :subdomain, :uuid ]
 
