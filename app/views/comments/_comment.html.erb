@@ -1,8 +1,13 @@
-<p>
-  <%= comment.body %>
-  <% if comment.user %>
-    <small>
-      <em><%= comment.user.name || comment.user.email %></em>
-    </small>
-  <% end %>
-</p>
+<div class="media">
+  <div class="media-body">
+    <%= comment.body %>
+      <br>
+      <% if comment.user %>
+        <small>
+          <%= image_tag comment.user.avatar.url(:tiny) if comment.user.avatar? %> submitted <%= time_ago_in_words(comment.created_at) %> ago by <em><%= comment.user.name || comment.user.email %></em>
+        </small>
+        <br>
+        <hr>
+      <% end %>
+  </div>
+</div>
