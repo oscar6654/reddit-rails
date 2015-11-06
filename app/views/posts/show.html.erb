@@ -1,18 +1,17 @@
-<h1><%= @post.markdown_title %></h1>
-<h4><%= @post.summary.description %></h4>
-<% if (@post.summary == nil) %>
-  <%= link_to "Create a Post Summary", new_topic_post_summary_path(@topic, @post) %>
+<%if @post.image? %>
+  <div class="form-group">
+    <%= image_tag @post.image.url(:thumb) %>
+  </div>
 <% end %>
-
+<h1><%= markdown @post.title %></h1>
 
 <div class="row">
   <div class="col-md-8">
     <small>
-       <%= image_tag(@post.user.avatar.tiny.url) if @post.user.avatar? %>
-       submitted <%= time_ago_in_words(@post.created_at) %> ago by
-       <%= @post.user.name %>
+      <%= image_tag @post.user.avatar.url(:tiny) if @post.user.avatar? %>
+      submitted <%= time_ago_in_words(@post.created_at) %> ago by <%= @post.user.name %>
     </small>
-    <p><%= @post.markdown_body %></p>
+    <p><%= markdown @post.body %></p>
   </div>
   <div class="col-md-4">
     <% if policy(@post).edit? %>
