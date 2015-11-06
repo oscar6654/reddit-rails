@@ -15,6 +15,7 @@ gem 'faker'
 gem 'devise'
 gem 'figaro', '1.0'
 gem 'pundit'
+gem 'redcarpet'
 group :development do
   gem 'sqlite3'
 end
