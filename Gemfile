@@ -16,6 +16,9 @@ gem 'devise'
 gem 'figaro', '1.0'
 gem 'pundit'
 gem 'redcarpet'
+gem 'carrierwave'
+gem 'mini_magick', '~> 3.5.0'
+gem 'fog'
 group :development do
   gem 'sqlite3'
 end
