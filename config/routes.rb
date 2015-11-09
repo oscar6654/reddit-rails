@@ -3,6 +3,10 @@ Rails.application.routes.draw do
 
 
 
+  get 'comments/new'
+
+  get 'comments/create'
+
   devise_for :users
   resources :users, only: [:update]
   devise_scope :user do
@@ -10,10 +14,10 @@ Rails.application.routes.draw do
   end
   resources :posts
   resources :topics do
-     resources :posts, except: [:index] do
-      resources :summary, only: [:new, :create, :show]
+    resources :posts, except: [:index] do
+      resources :comments, only: [:create]
     end
-   end
+  end
   get 'about' => 'welcome#about'
 
   root to: 'welcome#index'
