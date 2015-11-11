@@ -23,8 +23,8 @@ users = User.all
 # Create Topics
  100.times do
  Topic.create!(
-   name:         Faker::Lorem.sentence,
-   description:  Faker::Lorem.paragraph
+   name: Faker::Lorem.sentence,
+   description:Faker::Lorem.paragraph
  )
  end
 topics = Topic.all
