@@ -1,14 +1,15 @@
 class PostsController < ApplicationController
-  def index
-    @posts = PostPolicy::Scope.new(current_user, Post).resolve
-    authorize @posts
-  end
+  # def index
+  #   @posts = PostPolicy::Scope.new(current_user, Post).resolve
+  #   authorize @posts
+  # end
 
   def show
-    @post = Post.find(params[:id])
     @topic = Topic.find(params[:topic_id])
+    @post = Post.find(params[:id])
+
     @comments = @post.comments
-    @comment = @post.comments.build
+    #@comment = @post.comments.build
     #authorize @comments
     #@summary = @post.summary
     #authorize @post
@@ -68,9 +69,10 @@ class PostsController < ApplicationController
        render :show
      end
   end
-end
-private
 
-def post_params
-  params.require(:post).permit(:title, :body, :image)
+  private
+
+  def post_params
+    params.require(:post).permit(:title, :body, :image)
+  end
 end
