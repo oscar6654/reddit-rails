@@ -9,9 +9,8 @@ class Post < ActiveRecord::Base
   self.per_page = 100
   validates :title, length: { minimum: 5 }, presence: true
   validates :body, length: { minimum: 20 }, presence: true
-  after_create :create_vote
-  #validates :topic, presence: true
-  #validates :user, presence: true
+  validates :topic, presence: true
+  validates :user, presence: true
   def up_votes
     votes.where(value: 1).count
   end
@@ -48,9 +47,13 @@ class Post < ActiveRecord::Base
 
   default_scope { order('rank DESC') }
 
-  private
 
   def create_vote
     user.votes.create(value: 1, post: self)
   end
+
+  def save_with_initial_vote
+    self.save
+  end
+
 end
