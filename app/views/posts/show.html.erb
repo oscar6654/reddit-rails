@@ -1,8 +1,4 @@
-<%if @post.image? %>
-  <div class="form-group">
-    <%= image_tag @post.image.url(:thumb) %>
-  </div>
-<% end %>
+
 <h1><%= markdown @post.title %></h1>
 <%= render partial: 'votes/voter', locals: {post: @post} %>
 <div class="row">
@@ -30,7 +26,7 @@
        <%= pluralize(@post.down_votes, 'down vote') %>
      </small>
    </div>
-
+  <%= render partial: 'favorites/favorite', locals: { post: @post } %>
   </div>
 </div>
 
