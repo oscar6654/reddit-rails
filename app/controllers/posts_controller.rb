@@ -26,6 +26,7 @@ class PostsController < ApplicationController
     @post = current_user.posts.build(post_params)
     @post.user = current_user
     @post.topic = @topic
+    @post.save_with_initial_vote #Rspec mocking
     authorize @post
     if @post.save
       @post.create_vote
