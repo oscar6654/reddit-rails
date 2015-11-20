@@ -54,12 +54,9 @@ class Post < ActiveRecord::Base
   end
 
   def save_with_initial_vote
-    self.save
-
     ActiveRecord::Base.transaction do
-    #post = Post.create(title: 'Whatever', body: 'Post bodies must be pretty long.')
-    post.save
-    post.create_vote #=> throws error
+       post.save
+       post.create_vote
     end
   end
 end
