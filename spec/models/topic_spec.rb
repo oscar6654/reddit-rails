@@ -22,7 +22,7 @@ describe Topic do
     describe "visible_to(user)" do
       it "returns all topics if the user is present" do
         #user = User.new
-        user = true
+        #user = true
         expect(Topic.visible_to).to eq( [@all_if_user] )
       end
 

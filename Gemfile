@@ -8,6 +8,7 @@ gem 'rb-readline', group: :development
 group :production do
    gem 'pg'
    gem 'rails_12factor'
+   gem 'puma'
 end
 gem 'bootstrap-sass'
 gem 'pry-rails'
@@ -26,7 +27,10 @@ end
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
+  gem 'puma'
+  gem 'newrelic_rpm'
 end
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
