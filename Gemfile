@@ -8,8 +8,9 @@ gem 'rb-readline', group: :development
 group :production do
    gem 'pg'
    gem 'rails_12factor'
-   gem 'puma'
 end
+gem 'puma'
+gem 'newrelic_rpm'
 gem 'bootstrap-sass'
 gem 'pry-rails'
 gem 'faker'
@@ -21,14 +22,14 @@ gem 'carrierwave'
 gem 'mini_magick', '~> 3.5.0'
 gem 'fog'
 gem 'will_paginate', '~> 3.0.5'
+gem 'factory_girl_rails'
 group :development do
   gem 'sqlite3'
 end
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
-  gem 'puma'
-  gem 'newrelic_rpm'
+
 end
 
 # Use SCSS for stylesheets

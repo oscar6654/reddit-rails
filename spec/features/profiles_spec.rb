@@ -1,6 +1,8 @@
  require 'rails_helper'
 
  describe "Visiting profiles" do
+    include Warden::Test::Helpers
+    Warden.test_mode!
 
    include TestFactories
 
@@ -28,7 +30,9 @@
 
     before do
 
-      user = authenticated_user
+      #user = authenticated_user
+      #login_as(user, :scope => :user)
+      user = FactoryGirl.create(:user)
       login_as(user, :scope => :user)
 
     end
