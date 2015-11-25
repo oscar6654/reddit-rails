@@ -1,14 +1,16 @@
  require 'rails_helper'
 
  describe "Visiting profiles" do
+
+
     include Warden::Test::Helpers
     Warden.test_mode!
 
-   include TestFactories
 
    before do
+     @topic = create(:topic)
      @user = create(:user)
-     @post = create(:post, user: @user)
+     @post = create(:post, user: @user, topic: @topic)
      @comment = create(:comment, post: @post, user: @user)
      #@user = authenticated_user
      #@post = associated_post(user: @user)
@@ -31,12 +33,7 @@
 
    describe "signed in" do
 
-    before do
-
-
       before { login_as create(:user, role: 'admin'), scope: :user }
-
-    end
 
     it "shows profile" do
       visit user_path(@user)

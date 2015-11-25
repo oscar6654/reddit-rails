@@ -23,8 +23,6 @@
          .with(@user, @post, @comment)
          .and_return( double(deliver_now: true) )
 
-         expect( FavoriteMailer )
-           .to receive(:new_comment)
 
        @comment.save
      end
