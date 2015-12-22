@@ -24,9 +24,9 @@ class Topics::PostsController < ApplicationController
   def create
     @topic = Topic.find(params[:topic_id])
     @post = current_user.posts.build(post_params)
-    @post.user = current_user
+    #@post.user = current_user
     @post.topic = @topic
-    @post.save_with_initial_vote #Rspec mocking
+    #@post.save_with_initial_vote #Rspec mocking
     authorize @post
     if @post.save
       @post.create_vote
